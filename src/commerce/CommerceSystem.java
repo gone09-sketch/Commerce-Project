@@ -10,11 +10,15 @@ public class CommerceSystem {
     List<Product> productList; // Product를 관리하는 리스트
 
 
-    // 생산자
+    // 생성자
+    public CommerceSystem(List<Product> newProducts) {
+        this.productList = newProducts;
+    }
 
 
 
     // 기능
+    //start 기능 -> 프로그램을 시작하는 기능
 
 
 }
