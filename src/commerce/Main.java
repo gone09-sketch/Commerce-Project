@@ -24,32 +24,8 @@ public class Main {
 
         // CommerceSystem에 상품리스트 전달
         CommerceSystem system = new CommerceSystem(allProducts);
-
-
-        // 상품 메뉴 출력
-        int i = 1;
-        boolean isRunning = true;
-        while (isRunning) {
-            System.out.println("[ 실시간 커머스 플랫폼 - 전자제품 ]");
-            for (Product product : allProducts) {
-                System.out.println(String.format("%d. %-12s | %,10d원 | %s",
-                        i,
-                        product.getProductName(),
-                        product.getProductPrice(),
-                        product.getProductDescription()));
-                i++;
-            }
-            System.out.println(String.format("%d. %-11s | %s", 0, "종료", "프로그램 종료"));
-
-            // 사용자 입력값 받기
-            Scanner scanner = new Scanner(System.in);
-            int userChoice = scanner.nextInt();
-            if (userChoice == 0) {
-                isRunning = false;
-                System.out.println("커머스 플랫폼을 종료합니다.");
-                break;
-            }
-        }
+        // 상품 메뉴 출력 start 메서드 실행
+        system.start();
 
 
 
