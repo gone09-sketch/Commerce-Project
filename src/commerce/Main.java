@@ -26,10 +26,14 @@ public class Main {
         int i =1;
         System.out.println("[ 실시간 커머스 플랫폼 - 전자제품 ]");
         for (Product product : allProducts) {
-            System.out.println(i + "." + product.getProductName());
+            System.out.println(String.format("%d. %-12s | %,10d원 | %s",
+                    i,
+                    product.getProductName(),
+                    product.getProductPrice(),
+                    product.getProductDescription()));
             i++;
         }
-        System.out.println("0. 종료");
+        System.out.println(String.format("%d. %-11s | %s", 0, "종료", "프로그램 종료"));
 
         // 사용자 입력값 받기
         Scanner scanner = new Scanner(System.in);
@@ -37,8 +41,6 @@ public class Main {
         if (userChoice == 0) {
             System.out.println("커머스 플랫폼을 종료합니다.");
         }
-
-
 
 
 
