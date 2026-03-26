@@ -15,7 +15,6 @@ public class Main {
 
         // List 선언
         List<Product> allProducts = new ArrayList<>();
-
         // 상품 추가
         allProducts.add(product1);
         allProducts.add(product2);
@@ -26,9 +25,5 @@ public class Main {
         CommerceSystem system = new CommerceSystem(allProducts);
         // 상품 메뉴 출력 start 메서드 실행
         system.start();
-
-
-
-
     }
 }

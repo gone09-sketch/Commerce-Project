@@ -42,7 +42,7 @@ public class CommerceSystem {
                 System.out.println("커머스 플랫폼을 종료합니다.");
                 break;
             } else { // 아직 상품과 관련하여 이동하는 곳을 몰라서 임시로 해둠.
-                System.out.println("\n입력오류: 번호를 다시 입력하세요");
+                System.out.println("\n입력오류: 번호를 다시 입력하세요.");
             }
         }
     }
