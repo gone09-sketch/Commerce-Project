@@ -26,11 +26,11 @@ public class CommerceSystem {
         // 카테고리 메뉴 출력
         while (true) {
             int i = 1;
-            System.out.println("[ 실시간 커머스 플랫폼 - 전자제품 ]");
+            System.out.println("[ 실시간 커머스 플랫폼 메인]");
             for (Category category : categoryList) {
                 System.out.println(String.format("%d. %s",
                         i,
-                        category.getCategory()));
+                        category.getName()));
                 i++;
             }
             System.out.println(String.format("%d. %-11s | %s", 0, "종료", "프로그램 종료"));
@@ -42,12 +42,9 @@ public class CommerceSystem {
                 break;
 
                 // get(인덱스)로 카테고리 접근
-            } else if (userChoice == 1) {
-                categoryList.get(userChoice -1);
-            } else if (userChoice == 2) {
-                categoryList.get(userChoice -1);
-            } else if (userChoice == 3) {
-                categoryList.get(userChoice -1);
+            } else if (userChoice >= 1 && userChoice <= categoryList.size()) {
+                Category pickedCategory = categoryList.get(userChoice -1);
+                pickedCategory.productsMenu();
             } else {
                 System.out.println("\n입력오류: 번호를 다시 입력하세요.");
             }
