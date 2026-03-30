@@ -1,5 +1,7 @@
 package commerce;
 
+// 상품정보 관리
+
 public class Product {
 
     // 속성
@@ -19,7 +21,6 @@ public class Product {
 
 
     //기능
-
     // 1. getter
     // 상품명
     public String getProductName() {
