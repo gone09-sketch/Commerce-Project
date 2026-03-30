@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class CommerceSystem {
 
     // 속성
-//    private List<Product> productList; // Product를 관리하는 리스트 -> Category 클래스로 이전
     private Scanner scanner; // Scanner 속성 선언해주기
     private List<Category> categoryList; // Category를 관리하는 리스트
 
@@ -74,7 +73,31 @@ public class CommerceSystem {
                                 selectedProduct.getProductDescription(),
                                 selectedProduct.getProductStock())));
                         System.out.println();
-                        break; // [실시간 커머스 플랫폼 메인]으로 돌아감
+
+
+                        // 장바구니 질문 출력
+                        System.out.println("\"" + (String.format("%s | %,d원 | %s",
+                                selectedProduct.getProductName(),
+                                selectedProduct.getProductPrice(),
+                                selectedProduct.getProductDescription())) + "\"");
+                        System.out.println("위 상품을 장바구니에 추가하시겠습니까?");
+                        System.out.println("1. 확인" + "   " + "2. 취소");
+
+                        // 장바구니 선택 사용자 입력
+                        int cartChoice = scanner.nextInt();
+                        if (cartChoice == 1) {
+
+                            // .add(selectedProduct) 장바구니 추가
+
+
+                            System.out.println( selectedProduct.getProductName() + "가 장바구니에 추가되었습니다.");
+                            System.out.println("아래 메뉴를 선택해주세요. \n");
+                            break; // [실시간 커머스 플랫폼 메인]으로 돌아감 + [주문관리]
+                        } else if (cartChoice == 2) {
+                            System.out.println("장바구니 추가가 취소되었습니다.");
+                            System.out.println("아래 메뉴를 선택해주세요. \n");
+                            break; // [실시간 커머스 플랫폼 메인]으로 돌아감
+                        }
 
                     } else {
                         System.out.println("\n입력오류: 번호를 다시 입력하세요.");
