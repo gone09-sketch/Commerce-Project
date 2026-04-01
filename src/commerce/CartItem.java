@@ -26,4 +26,9 @@ public class CartItem {
     public Product getProduct() {
         return product;
     }
+
+    // 수량 반환 메서드
+    public int getQuantity() {
+        return quantity;
+    }
 }

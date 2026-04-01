@@ -54,9 +54,14 @@ public class Cart {
         return cartItemList.isEmpty();
     }
 
+    // 3. 장바구니 주문 취소 시, 삭제 메서드
+    public void clear() {
+        cartItemList.clear();
+    }
+
     // 3. 장바구니 내역 메서드
     public List<CartItem> getCartItemList() {
-        return getCartItemList();
+        return cartItemList;
     }
 
     // 4. 총 주문 금액 메서드
