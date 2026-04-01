@@ -21,7 +21,7 @@ public class Product {
 
 
     //기능
-    // 1. getter
+    // 1. 반환 메서드
     // 상품명
     public String getProductName() {
         return productName;
@@ -41,6 +41,16 @@ public class Product {
     public int getProductStock() {
         return productStock;
     }
+
+
+    // 2. 상품명 비교 메서드
+    /* 현재 상품(this)와 다른 상품(otherItem)의 상품명이 같은지 비교 */
+    public boolean isSameProduct(Product otherItem) {
+        return this.productName.equals(otherItem.productName);
+    }
+
+
+
 
 
 }
