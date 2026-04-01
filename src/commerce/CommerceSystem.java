@@ -1,4 +1,79 @@
 package commerce;
 
+// 컨트롤러: 흐름제어 (입출력)
+
+import java.util.List;
+import java.util.Scanner;
+
 public class CommerceSystem {
+
+    // 속성
+//    private List<Product> productList; // Product를 관리하는 리스트 -> Category 클래스로 이전
+    private Scanner scanner; // Scanner 속성 선언해주기
+    private List<Category> categoryList; // Category를 관리하는 리스트
+
+
+    // 생성자
+    public CommerceSystem(List<Category> newCategoryList , Scanner scanner) {
+        this.categoryList = newCategoryList;
+        this.scanner = scanner; // Scanner 객체 만들기
+    }
+
+
+    // 기능
+    // 1. start 메서드
+    public void start() {
+        // categoryList 출력
+        while (true) {
+            int categoryNumber = 1;
+            System.out.println("[ 실시간 커머스 플랫폼 메인]");
+            for (Category category : categoryList) {
+                System.out.println(String.format("%d. %s",
+                        categoryNumber,
+                        category.getCategoryName()));
+                categoryNumber++;
+            }
+            System.out.println(String.format("%d. %-11s | %s", 0, "종료", "프로그램 종료"));
+
+            // 사용자 입력값 받기
+            int categoryChoice = scanner.nextInt();
+            if (categoryChoice == 0) {
+                System.out.println("커머스 플랫폼을 종료합니다.");
+                break; // 프로그램 종료
+
+                // get(인덱스)로 categoryList 접근
+            } else if (categoryChoice >= 1 && categoryChoice <= categoryList.size()) {
+                Category selectedCategory = categoryList.get(categoryChoice -1);
+
+
+                // Category의 productList에서 사용자 입력값 받기
+                while (true) {
+                    selectedCategory.printCategory();
+                    int productChoice = scanner.nextInt();
+
+                    if (productChoice == 0) {
+                        break; // 카테고리 리스트로 돌아감
+
+                    } else if(productChoice >= 1 && productChoice <= selectedCategory.getProductListCount()) {
+                        Product selectedProduct = selectedCategory.getProduct(productChoice -1);
+                        System.out.println("선택한 상품: " + (String.format("%s | %,d원 | %s | 재고: %d개",
+                                selectedProduct.getProductName(),
+                                selectedProduct.getProductPrice(),
+                                selectedProduct.getProductDescription(),
+                                selectedProduct.getProductStock())));
+                        System.out.println();
+                        break; // categoryList 로 (실시간 커머스 플랫폼 메인)
+
+                    } else {
+                        System.out.println("\n입력오류: 번호를 다시 입력하세요.");
+                    }
+                }
+
+            } else {
+                System.out.println("\n입력오류: 번호를 다시 입력하세요.");
+            }
+
+        }
+    }
+
 }
