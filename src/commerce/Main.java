@@ -47,7 +47,7 @@ public class Main {
 
 
         // CommerceSystem 인스턴스화
-        CommerceSystem system = new CommerceSystem(allCategories, scanner);
+        CommerceSystem2 system = new CommerceSystem2(allCategories, scanner);
         // start 메서드 호출
         system.start();
     }
