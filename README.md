@@ -13,6 +13,7 @@
 
 ## 2. 프로젝트 구조 
 ```plaintext
+
 Commerce_Project/
 ├── src/
 │   ├── Commerce/          
@@ -23,6 +24,8 @@ Commerce_Project/
 │       ├── Customer.java          # 고객 관리(고객명, 이메일, 등급)
 │       ├── Cart.java              # 장바구니 전체 관리(장바구니 아이템 리스트, 장바구니 내역, 장바구니 삭제)
 │       ├── CartItem.java          # 장바구니에 추가된 아이템(상품+추가수량) 관리
+
+
 ```
 ---
 
